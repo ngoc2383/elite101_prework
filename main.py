@@ -5,8 +5,9 @@ def my_name():
 def my_age(name):
     try:
         age = int(input("Hello " + name + ", how old are you? "))
-    except TypeError:
-        my_age()
+    except (TypeError, ValueError) as error:
+        print("Your age must be a number!")
+        my_age(name)
     
     if age < 15:
         print("Welcome young user!")
@@ -29,9 +30,20 @@ def help_menu():
     print("1. What's the opening and closing time of the museum?")
     print("2. What's our museum about?")
     print("3. What should you bring when visiting our museum?")
-    print("4. ")
-    
+    print("4. What's the recommended time to visit our museum?")
+    print("5. Exit conversation")
+    print("")
 
+    def choice_input():
+        try:
+            choice = int(input("Enter the number of your choice: "))    
+        except TypeError:
+            print("Input must be a number!")
+            choice_input()
+        return choice
+    
+    choice = choice_input()
+    print(choice)
 
 
 
