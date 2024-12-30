@@ -1,7 +1,9 @@
+# Collect user name
 def my_name():
     name = input("What is your name? ")
     return name
-
+    
+# Collect user age and respond with welcome message
 def my_age(name):
     age = None
 
@@ -39,19 +41,19 @@ def help_menu():
     print("5. Exit conversation")
     print("")
 
-    def choice_input():
-        choice = None
+    
+    choice = None
+    while choice is None:
         try:
             choice = int(input("Enter the number of your choice: "))    
-        except TypeError:
+            if choice < 1 or choice > 5:
+                print("Not a valid choice!")
+                choice = None
+        except (TypeError, ValueError) as error:
             print("Input must be a number!")
-            choice_input()
-        if choice < 1 or choice > 5:
-            print("Not a valid choice!")
-            choice_input()
-        return choice
-    
-    choice = choice_input()
+            choice = None
+        
+
     if choice == 1:
         print("Our museum open at 8am and closes at 9pm everyday. For holiday, please check the annuoncement page for specific time. Hope this helps!")
     elif choice == 2:
@@ -66,14 +68,14 @@ def help_menu():
     if choice != 5:
         reset_or_no = None
         while reset_or_no is None:
-            reset_or_no = input("Would you like to ask another question?(y or n) ")
+            reset_or_no = input("\nWould you like to ask another question?(y or n) ")
             if reset_or_no == "y":
                 help_menu()
             elif reset_or_no == "n":
                 print("Thank you for your interest in our museum\nHave a good day!")
             else:
                 print("Invalid input.")
-            reset_or_no = None
+                reset_or_no = None
 
 
 # Call functions ====================================================================================================================================================================================
