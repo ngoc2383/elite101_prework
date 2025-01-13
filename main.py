@@ -51,9 +51,11 @@ def help_menu():
             if choice < 1 or choice > 5:
                 print("Not a valid choice!")
                 choice = None
-        except (TypeError, ValueError) as error:
+        except (TypeError, ValueError):
             print("Input must be a number!")
             choice = None
+
+    print("")
         
 
     if choice == 1:
