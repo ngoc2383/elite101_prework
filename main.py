@@ -2,7 +2,7 @@
 def my_name():
     name = input("What is your name? ")
     return name
-    
+
 # Collect user age and respond with welcome message
 def my_age(name):
     age = None
@@ -27,11 +27,13 @@ def my_age(name):
     else:
         print("Welcome! Are you on your way to break the world record for age?")
 
+# Greets the user and call my_name and my_age function
 def greeting():
     print("Welcome to the Museum Chatbot!")
     name = my_name()
     my_age(name)
 
+# Ask how 
 def help_menu():
     print("\nHow can I help you?\nPlease select from the options below:")
     print("1. What's the opening and closing time of the museum?")
