@@ -70,9 +70,10 @@ def help_menu():
         print("Thank you for your interest in our museum\nHave a good day!")
 
     if choice != 5:
+        print("")
         reset_or_no = None
         while reset_or_no is None:
-            reset_or_no = input("\nWould you like to ask another question?(y or n) ")
+            reset_or_no = input("Would you like to ask another question?(y or n) ")
             if reset_or_no == "y":
                 help_menu()
             elif reset_or_no == "n":
