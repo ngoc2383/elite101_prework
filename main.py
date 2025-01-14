@@ -74,9 +74,9 @@ def help_menu():
         reset_or_no = None
         while reset_or_no is None:
             reset_or_no = input("Would you like to ask another question?(y or n) ")
-            if reset_or_no == "y":
+            if reset_or_no.lower() == "y":
                 help_menu()
-            elif reset_or_no == "n":
+            elif reset_or_no.lower() == "n":
                 print("Thank you for your interest in our museum\nHave a good day!")
             else:
                 print("Invalid input.")
